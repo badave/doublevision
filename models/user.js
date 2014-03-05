@@ -50,7 +50,7 @@ var User = module.exports = Model.extend({
   afterCreate: function() {
     var deferred = Promise.defer();
 
-    Mailchimp.call("lists", "subscribe", { "id": "bbd5b45f54", email: { "email": this.get("email") } }, function(err, data) {
+    Mailchimp.call("lists", "subscribe", { "id": "", email: { "email": this.get("email") } }, function(err, data) {
       if(err) {
         return deferred.reject(err);
       }
