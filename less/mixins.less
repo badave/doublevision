@@ -1,0 +1,110 @@
+
+.box-shadow(@box-shadow: 0 0px 2px 0 rgba(0,0,0,0.5)) {
+  -webkit-box-shadow: @box-shadow;
+  -moz-box-shadow: @box-shadow;
+  box-shadow: @box-shadow;
+}
+
+// Border Radius
+.rounded-corners (@radius: 6px) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  border-radius: @radius;
+}
+
+// This is necessary for CSS classes to automatically call the mixin
+.rounded-corners {
+  .rounded-corners;
+}
+
+.rounded-corners-top {
+  .rounded-corners;
+  -webkit-border-bottom-right-radius: 0;
+  -moz-border-bottom-right-radius: 0;
+  border-bottom-right-radius: 0;
+  -webkit-border-bottom-left-radius: 0;
+  -moz-border-bottom-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.gradient (@color1: #000, @color2: #fff) {
+  background-image: -webkit-linear-gradient(@color1, @color2);
+  background-image: -moz-linear-gradient(@color1, @color2);
+  background-image: linear-gradient(@color1, @color2);
+}
+
+.img-dropshadow {
+  background: #fff;
+  -moz-box-shadow: 0 2px 6px rgba(0,0,0,0.39);
+  -webkit-box-shadow: 0 2px 6px rgba(0,0,0,0.39);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.39);
+}
+
+.background-cover-black {
+  background-color: black !important;
+  background-position: center center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+}
+
+.background-cover-white {
+  background-color: white !important;
+  background-position: center center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+}
+
+.clearfix {
+  clear:both;
+  &:last-of-type {
+    border-bottom: none;
+  }
+
+  &:before,&:after {
+    display: table;
+    content: "";
+    line-height: 0;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+.gradient (@from: #fff, @to: #f1f1f1) {
+  background-image: -webkit-gradient(linear, left top, left bottom, from( @from ), to( @to));
+  background-image: -webkit-linear-gradient( @from, @to );
+  background-image: -moz-linear-gradient( @from, @to );
+  background-image: -ms-linear-gradient( @from, @to );
+  background-image: -o-linear-gradient( @from, @to );
+  background-image: linear-gradient( @from, @to );
+}
+
+.transition (@transition: all 0.5s) {
+  transition: @transition;
+  -moz-transition: @transition; /* Firefox 4 */
+  -webkit-transition: @transition; /* Safari and Chrome */
+  -o-transition: @transition; /* Opera */
+}
+
+.transform(@transform) {
+  -webkit-transform: @transform;
+      -moz-transform: @transform;
+      -ms-transform: @transform;
+      -o-transform: @transform;
+      transform: @transform;
+}
+
+.filter(@filter) {
+  -webkit-filter: @filter;
+  -moz-filter: @filter;
+  -o-filter: @filter;
+  -ms-filter: @filter;
+}
+
+.text-outline (@color: #ffffff) {
+  text-shadow:
+      -1px -1px 0 @color,  
+      1px -1px 0 @color,
+      -1px 1px 0 @color,
+      1px 1px 0 @color;
+}
