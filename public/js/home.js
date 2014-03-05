@@ -10,8 +10,6 @@ $(document).ready(function() {
 
     var type = $(".type-of-user").dropdown("get").value() || "interested";
 
-    mixpanel.track("signup click");
-
     $.ajax({
       type: "POST",
       url: "/v1/users",
@@ -58,7 +56,7 @@ $(document).ready(function() {
       // $skyline.css({ backgroundPosition: "0 " + newY + "px" });
       $skyline.css({ transform: "translate3d(0, " + newY + "px,0)"});
 
-      var newYWords = 420 + scrollTop/3.5;
+      var newYWords = 300 + scrollTop/3.5;
       var newOpacity = 1 - scrollTop/500.0;
       $words.css({ top: newYWords, opacity: newOpacity });
     };
@@ -70,5 +68,4 @@ $(document).ready(function() {
     $(".ui.dropdown").dropdown();
 
   // }
-  mixpanel.track("Home loaded");
 });

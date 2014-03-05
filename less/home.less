@@ -8,7 +8,7 @@
 
 @import 'mixins.less';
 
-@logo-font-size: 1.5em;
+@logo-font-size: 1.6em;
 
 @logo-color: rgb(0, 46, 200);
 @logo-alt-color: rgb(224, 46, 0);
@@ -21,12 +21,16 @@
 @header-font: @helvetica;
 @body-font: @helvetica;
 
+.red {
+  
+}
+
 header {
   font-family: @header-font;
 
   .logo, .logo:hover, .logo a, .logo a:hover {
     text-decoration: none;
-    color: @logo-color;
+    color: @logo-alt-color;
 
     span {
       color: @logo-alt-color;
@@ -69,23 +73,28 @@ body {
   text-align: left !important;
 }
 
-
 .backdrop {
   font-family: @helvetica-ultra;
   height:580px;
   margin-top:0 !important;
   position:relative;
-  z-index:0;
+  z-index:-1;
 
   .backdrop-words {
     color: #fff;
     text-align:center;
     position:relative;
 
-    top:420px;
+    top:300px;
     font-size:3em;
+    font-weight:500;
+    z-index:-1;
   }
 }
+
+.dark-box {
+  font-family: @helvetica-ultra;
+} 
 
 .main {
   h1, h2 {
@@ -191,10 +200,23 @@ section {
 //   top: 99px;
 // }
 
+.ac {
+  text-align:center;
+}
+
 .sf-skyline {
   background-image: url("/images/sf-skyline.png");
   background-size: cover;
   background-position:0 -20px;
+  background-repeat:no-repeat;
+  min-height:580px;
+  .transform(translate-z(0));
+}
+
+.double-vision-image {
+  background-image: url("/images/double-vision-image.png");
+  background-size: cover;
+  background-position:0 -100px;
   background-repeat:no-repeat;
   min-height:580px;
   .transform(translate-z(0));
@@ -222,18 +244,21 @@ article {
     font-size:1.2em !important;
     font-weight:200;
   }
+}
 
-  .button {
-    font-family:@helvetica !important;
-    font-weight:200;
-    text-align:center;
-    padding-top:20px;
-    padding-bottom:20px;
+.ui.button {
+  font-family:@helvetica-ultra !important;
+  font-weight:200;
+  text-align:center;
+  padding-top:20px;
+  padding-bottom:20px;
+  text-transform:none !important;
+  font-size:0.5em;
+  margin-top:20px;
 
-    &.yellow {
-      background-color:#FF9D00;
-      color:#fff;
-    }
+  &.yellow {
+    background-color:#FF9D00;
+    color:#fff;
   }
 }
 
