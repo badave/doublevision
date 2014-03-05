@@ -1,15 +1,14 @@
 var _ = require('lodash');
 var when = require('when');
-var Bookshelf = require("bookshelf");
 var base62 = require('base62');
 var check = require('validator').check,
     sanitize = require('validator').sanitize;
 
 var BaseCollection = require('../collections/base');
 
-var BookshelfModel = Bookshelf.primary.Model;
+var Backbone = require('backbone');
 
-BaseModel = module.exports = BookshelfModel.extend({
+BaseModel = module.exports = Backbone.Model.extend({
   events: {
     "saving": "beforeSave",
     'updating': 'beforeUpdate',

@@ -19,7 +19,6 @@ var less = require('less-middleware');
 require('./initializers');
 require('./initializers/lodash-extensions');
 require('./initializers/handlebars');
-require('./initializers/bookshelf');
 
 // Config
 config.proc = 'APP';
