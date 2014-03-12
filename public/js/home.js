@@ -56,7 +56,7 @@ $(document).ready(function() {
       // $skyline.css({ backgroundPosition: "0 " + newY + "px" });
       $skyline.css({ transform: "translate3d(0, " + newY + "px,0)"});
 
-      var newYWords = 300 + scrollTop/3.5;
+      var newYWords = 350 + scrollTop/3.5;
       var newOpacity = 1 - scrollTop/500.0;
       $words.css({ top: newYWords, opacity: newOpacity });
     };
@@ -68,4 +68,11 @@ $(document).ready(function() {
     $(".ui.dropdown").dropdown();
 
   // }
+
+  $('a').click(function(){
+      $('html, body').animate({
+          scrollTop: $( $.attr(this, 'href') ).offset().top
+      }, 500);
+      return false;
+  });
 });

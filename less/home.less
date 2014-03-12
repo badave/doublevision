@@ -10,8 +10,8 @@
 
 @logo-font-size: 1.6em;
 
-@logo-color: rgb(0, 46, 200);
-@logo-alt-color: rgb(224, 46, 0);
+@logo-color: black;
+@logo-alt-color: black;
 
 @lucinda: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
 
@@ -21,8 +21,8 @@
 @header-font: @helvetica;
 @body-font: @helvetica;
 
-.red {
-  
+body {
+  background-color:black;
 }
 
 header {
@@ -42,12 +42,20 @@ header {
   }
 
   width: 100%;
-  border-bottom:1px #ccc solid;
-  .box-shadow(0 2px 2px 0 rgba(220,220,220,0.4));
+  // border-bottom:1px #ccc solid;
+  // .box-shadow(0 2px 2px 0 rgba(220,220,220,0.4));
 
   position:fixed;
   z-index:12;
-  background-color:white;
+  background-color:transparent;
+}
+
+.splash {
+  position:absolute;
+  z-index:11;
+  text-align:center;
+  width:100%;
+  left:-45px;
 }
 
 .fr {
@@ -75,25 +83,28 @@ body {
 
 .backdrop {
   font-family: @helvetica-ultra;
-  height:580px;
   margin-top:0 !important;
   position:relative;
-  z-index:-1;
+  z-index:10;
+
 
   .backdrop-words {
     color: #fff;
     text-align:center;
     position:relative;
 
-    top:300px;
+    top:350px;
     font-size:3em;
     font-weight:500;
-    z-index:-1;
+    z-index:12;
   }
 }
 
 .dark-box {
   font-family: @helvetica-ultra;
+  margin-bottom: 20px;
+  position:relative;
+  z-index:100;
 } 
 
 .main {
@@ -214,7 +225,7 @@ section {
 }
 
 .double-vision-image {
-  background-image: url("/images/double-vision-image.png");
+  background-image: url("/images/messaging.png");
   background-size: cover;
   background-position:0 -100px;
   background-repeat:no-repeat;
