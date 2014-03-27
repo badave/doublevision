@@ -153,12 +153,37 @@ body {
   }
 }
 
+.sf-skyline {
+  background-image: url("/images/sf-skyline.png");
+  background-size: cover;
+  background-position:0 -20px;
+  background-repeat:no-repeat;
+  min-height:580px;
+  .transform(translate-z(0));
+}
+
+.double-vision-image {
+  background-image: url("/images/messaging.png");
+  background-size: cover;
+  background-position:0 0px;
+  background-repeat:no-repeat;
+  min-height:580px;
+  .transform(translate-z(0));
+  position:relative;
+  z-index:20;
+  top:-50px;
+}
+
 @media (min-width: 320px) 
 and (max-width : 568px) { 
   .left-image {
     background-position:0 -69px;
     height:320px;
     margin-top:0;
+  }
+
+  .double-vision-image  {
+    top:0;
   }
 }
 
@@ -213,27 +238,6 @@ section {
 
 .ac {
   text-align:center;
-}
-
-.sf-skyline {
-  background-image: url("/images/sf-skyline.png");
-  background-size: cover;
-  background-position:0 -20px;
-  background-repeat:no-repeat;
-  min-height:580px;
-  .transform(translate-z(0));
-}
-
-.double-vision-image {
-  background-image: url("/images/messaging.png");
-  background-size: cover;
-  background-position:0 0px;
-  background-repeat:no-repeat;
-  min-height:580px;
-  .transform(translate-z(0));
-  position:relative;
-  z-index:20;
-  top:-50px;
 }
 
 article {
