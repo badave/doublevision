@@ -227,10 +227,13 @@ section {
 .double-vision-image {
   background-image: url("/images/messaging.png");
   background-size: cover;
-  background-position:0 -100px;
+  background-position:0 0px;
   background-repeat:no-repeat;
   min-height:580px;
   .transform(translate-z(0));
+  position:relative;
+  z-index:20;
+  top:-50px;
 }
 
 article {
