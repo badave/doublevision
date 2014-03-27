@@ -22,12 +22,32 @@ config.mailchimp = "-us6";
  * Make sure IP is whitelisted in the RDS Security Group (i.e. CIDR/IP: 23.125.128.23/32)
  */
 
+
+
 // Environments
 if (config.env === 'production') {
+	config.pg = {
+    url       : "postgres://zyvfwuqasnaens:R30IMI1a2ufW3OtSpaE2t9IRNR@ec2-54-204-2-217.compute-1.amazonaws.com:5432/d67ndsn51s6kt3",
+    host      : "ec2-54-204-2-217.compute-1.amazonaws.com",
+    port      : 5432,
+    user      : "zyvfwuqasnaens",
+    password  : "R30IMI1a2ufW3OtSpaE2t9IRNR",
+    database  : "d67ndsn51s6kt3",
+    ssl       : true
+  };
    config.test = false;
 } else {
   config.test = true;
   config.debug = true;
+  config.pg = {
+    url       : "postgres://zyvfwuqasnaens:R30IMI1a2ufW3OtSpaE2t9IRNR@ec2-54-204-2-217.compute-1.amazonaws.com:5432/d67ndsn51s6kt3",
+    host      : "ec2-54-204-2-217.compute-1.amazonaws.com",
+    port      : 5432,
+    user      : "zyvfwuqasnaens",
+    password  : "R30IMI1a2ufW3OtSpaE2t9IRNR",
+    database  : "d67ndsn51s6kt3",
+    ssl       : true
+  };
 }
 
 // Mailgun

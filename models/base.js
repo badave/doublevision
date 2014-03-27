@@ -6,9 +6,7 @@ var check = require('validator').check,
 
 var BaseCollection = require('../collections/base');
 
-var Backbone = require('backbone');
-
-BaseModel = module.exports = Backbone.Model.extend({
+BaseModel = module.exports = Bookshelf.primary.Model.extend({
   events: {
     "saving": "beforeSave",
     'updating': 'beforeUpdate',
@@ -138,7 +136,7 @@ BaseModel = module.exports = Backbone.Model.extend({
         return that.saveConnections("afterBeforeSave");
       })
       .then(function() {
-        return BookshelfModel.prototype.save.apply(that, args);
+        return Bookshelf.primary.Model.prototype.save.apply(that, args);
       })
       .then(function() {
         return that.saveConnections("afterSave");

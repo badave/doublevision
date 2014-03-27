@@ -3,8 +3,7 @@ var _ = require('lodash');
 
 var Model = require('../models/base');
 
-var Backbone = require('backbone');
 
-BaseCollection = module.exports = Backbone.Collection.extend({
-  model: Model
+BaseCollection = module.exports = Bookshelf.primary.Collection.extend({
+		model: Model
 });

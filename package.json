@@ -31,6 +31,7 @@
     "lodash": "2.4.x",
     "when": "2.7.*",
     "backbone": "~1.1.2",
+    "bookshelf": "git://github.com/airbrite/bookshelf",
     "migrate": "0.1.x",
     "stripe": "2.3.x",
     "winston": "~0.7.2",

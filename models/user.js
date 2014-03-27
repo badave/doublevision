@@ -10,8 +10,8 @@ var Model = require("./base");
 
 var Renderer = require('../renderers/user');
 
-var MailChimpAPI = require('mailchimp').MailChimpAPI;
-var Mailchimp = new MailChimpAPI(config.mailchimp, { version : '2.0' });
+// var MailChimpAPI = require('mailchimp').MailChimpAPI;
+// var Mailchimp = new MailChimpAPI(config.mailchimp, { version : '2.0' });
 
 var User = module.exports = Model.extend({
   tableName: "users",
@@ -47,19 +47,24 @@ var User = module.exports = Model.extend({
 
   requiredFields: ["email"],
 
-  afterCreate: function() {
-    var deferred = Promise.defer();
+  // afterCreate: function() {
+  //   var deferred = Promise.defer();
 
-    Mailchimp.call("lists", "subscribe", { "id": "", email: { "email": this.get("email") } }, function(err, data) {
-      if(err) {
-        return deferred.reject(err);
-      }
+  //   Mailchimp.call("lists", "subscribe", {
+  //     "id": "",
+  //     email: {
+  //       "email": this.get("email")
+  //     }
+  //   }, function(err, data) {
+  //     if (err) {
+  //       return deferred.reject(err);
+  //     }
 
-      return deferred.resolve(data);
-    });
+  //     return deferred.resolve(data);
+  //   });
 
-    return deferred.promise;
-  },
+  //   return deferred.promise;
+  // },
 
   beforeSave: function() {
     this.set('email', _.sanitizeEmail((this.get('email'))));
@@ -69,17 +74,23 @@ var User = module.exports = Model.extend({
 
   // takes current password and created, verifies hash
   verifyPassword: function(password) {
-    var hash = bcrypt.hashSync(password + this.get('created').toString(), this.get('salt'));
+    var hash = bcrypt.hashSync(password + this.get('created')
+      .toString(), this.get('salt'));
     return hash === this.get('hash');
   },
 
   hashPassword: function() {
-    if(this.get('password')) {
-      this.set("hash", bcrypt.hashSync(this.get('password') + this.get('created').toString(), this.get('salt')));
+    if (this.get('password')) {
+      this.set("hash", bcrypt.hashSync(this.get('password') + this.get('created')
+        .toString(), this.get('salt')));
       this.unset('password');
     }
   },
   resetToken: function() {
-    return _.encodeJwt({iss: this.id, exp: new Date().getTime() + 604800000}, config.client_id);
+    return _.encodeJwt({
+      iss: this.id,
+      exp: new Date()
+        .getTime() + 604800000
+    }, config.client_id);
   }
 });

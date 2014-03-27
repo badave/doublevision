@@ -8,7 +8,7 @@ var env = process.env['NODE_ENV'] || 'development';
 global._ = _;
 global.Backbone = Backbone;
 global.config = require('../config');
-
+global.Bookshelf = require('./bookshelf');
 
 /**
  * Winston Logger
