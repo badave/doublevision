@@ -66,7 +66,7 @@ table{border-collapse:collapse;border-spacing:0}
 .clearfix:before,.clearfix:after{display:table;content:"";line-height:0}
 .clearfix:after{clear:both}
 body{background-color:black}
-header{font-family:"HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;width:100%;position:fixed;z-index:12;background-color:transparent}header .logo,header .logo:hover,header .logo a,header .logo a:hover{text-decoration:none;color:#000}header .logo span,header .logo:hover span,header .logo a span,header .logo a:hover span{color:#000}
+header{font-family:"HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;width:100%;position:absolute;z-index:12;background-color:transparent}header .logo,header .logo:hover,header .logo a,header .logo a:hover{text-decoration:none;color:#000}header .logo span,header .logo:hover span,header .logo a span,header .logo a:hover span{color:#000}
 header .logo h1,header .logo:hover h1,header .logo a h1,header .logo a:hover h1{font-size:1.6em}
 .splash{position:absolute;z-index:11;text-align:center;width:100%;left:-45px}
 .fr{float:right}
@@ -97,3 +97,4 @@ select option{font-family:"HelveticaNeue-Light","Helvetica Neue Light","Helvetic
 .ui.dropdown .title{width:100%;text-align:center;text-transform:uppercase;padding:5px;color:#cc0000;font-weight:600}
 hr.style-two{border:0;height:1px;background-image:-webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.4), rgba(0,0,0,0));background-image:-moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.4), rgba(0,0,0,0));background-image:-ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.4), rgba(0,0,0,0));background-image:-o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.4), rgba(0,0,0,0))}
 .success{transition:all 2s;-moz-transition:all 2s;-webkit-transition:all 2s;-o-transition:all 2s;transition:opacity 500ms;-moz-transition:opacity 500ms;-webkit-transition:opacity 500ms;-o-transition:opacity 500ms;opacity:0;height:0 !important;top:0}.success.expand{opacity:1;background-color:white;text-align:center !important;padding-top:40px;padding-bottom:40px;height:auto !important;font-size:1.5rem !important}
+.ui.form .sign-up{background-color:#3aa63b;margin-top:0;font-weight:400}
